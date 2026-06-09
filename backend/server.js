@@ -18,7 +18,9 @@ const PORT = process.env.PORT || 5000;
 ========================= */
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: "saidurgacadd-8be028a45a5b.json",
+  credentials: JSON.parse(
+    process.env.GOOGLE_CREDENTIALS
+  ),
   scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
   ],
