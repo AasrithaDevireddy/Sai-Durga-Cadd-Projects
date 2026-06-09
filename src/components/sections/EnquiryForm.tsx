@@ -79,7 +79,7 @@ const onSubmit = async (
     setSubmitting(true);
 
     const response = await fetch(
-      "http://localhost:5000/enquiry",
+      "https://sai-durga-backend.onrender.com/enquiry",
       {
         method: "POST",
         headers: {
