@@ -56,6 +56,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/enquiry", async (req, res) => {
+  console.log("STEP 1: Request received");
   try {
     const {
       name,
@@ -75,6 +76,7 @@ app.post("/enquiry", async (req, res) => {
 
     const currentYear =
       new Date().getFullYear();
+  console.log("STEP 2: Before Sheets GET");
 
     const existingRows =
       await sheets.spreadsheets.values.get({
@@ -82,11 +84,12 @@ app.post("/enquiry", async (req, res) => {
           process.env.SHEET_ID,
         range: "Enquiries!A:A",
       });
-
+  console.log("STEP 3: Sheets GET success");
     const rowCount =
       existingRows.data.values
         ? existingRows.data.values.length
         : 1;
+  console.log("STEP 4: Before Sheets APPEND");
 
     const serialNumber =
       String(rowCount).padStart(4,"0");
@@ -133,6 +136,9 @@ app.post("/enquiry", async (req, res) => {
         ],
       },
     });
+  console.log("STEP 5: Sheets APPEND success");
+
+console.log("STEP 6: Before Email");
 
     /* =====================
        ADMIN EMAIL
@@ -370,6 +376,10 @@ const clientMail = {
   </div>
   `,
 };
+
+console.log("STEP 7: Email success");
+
+console.log("STEP 8: Sending response");
 
 await Promise.all([
       transporter.sendMail(adminMail),
