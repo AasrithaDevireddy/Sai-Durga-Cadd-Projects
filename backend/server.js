@@ -381,10 +381,7 @@ console.log("STEP 7: Email success");
 
 console.log("STEP 8: Sending response");
 
-await Promise.all([
-      transporter.sendMail(adminMail),
-      transporter.sendMail(clientMail),
-    ]);
+console.log("EMAIL SKIPPED");
 
     res.status(200).json({
       success: true,
