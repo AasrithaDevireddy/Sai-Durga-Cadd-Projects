@@ -2,7 +2,6 @@ import { Toaster } from "sonner";
 
 import { Navbar } from "./components/Navbar";
 import { About } from "./components/sections/About";
-import { Contact } from "./components/sections/Contact";
 import { EnquiryForm } from "./components/sections/EnquiryForm";
 import { Footer } from "./components/sections/Footer";
 import { Hero } from "./components/sections/Hero";
@@ -23,7 +22,6 @@ export default function App() {
         <WhyChooseUs />
         <Workflow />
         <EnquiryForm />
-        <Contact />
       </main>
       <Footer />
       <Toaster position="top-right" richColors />

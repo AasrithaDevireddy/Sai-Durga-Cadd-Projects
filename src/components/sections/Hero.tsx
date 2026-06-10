@@ -25,12 +25,7 @@ export function Hero() {
             >
               Get a Quote
             </a>
-            <a
-              href="#contact"
-              className="px-8 py-4 border border-border rounded-lg font-semibold text-navy hover:bg-secondary transition-colors"
-            >
-              Contact Us
-            </a>
+            
           </div>
         </div>
         <div className="relative animate-fade-in">
