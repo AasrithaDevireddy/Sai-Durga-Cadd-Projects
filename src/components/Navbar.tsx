@@ -4,7 +4,6 @@ export function Navbar() {
     { href: "#services", label: "Services" },
     { href: "#industries", label: "Industries" },
     { href: "#workflow", label: "Process" },
-    { href: "#contact", label: "Contact" },
   ];
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
